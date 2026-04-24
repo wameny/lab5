@@ -39,6 +39,13 @@ const asyncMap = (array, element) => {
   });
 };
 
-asyncMap(array, asyncMapPromise)
-  .then((result) => console.log(result))
-  .catch((error) => console.log(error.message));
+async function realization() {
+  try {
+    const result = await asyncMap(array, asyncMapPromise);
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+realization();
